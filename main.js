@@ -123,7 +123,7 @@ function create_definition_section(){
     para.appendChild(actualdef)
 
     const reveal = document.createElement("button");
-    reveal.innerHTML = "Reveal defination";
+    reveal.innerHTML = "reveal definitions";
     reveal.style.cssText = `
         position: absolute;
         top: 50%;
@@ -207,7 +207,7 @@ function create_letter_section(){
     `
 
     const heading = document.createElement("center");
-    heading.innerHTML = "Reveal letter"
+    heading.innerHTML = "reveal letters"
     heading.style.cssText = `
         color: var(--key-text-color);
         margin-bottom: 5px;

@@ -1,7 +1,7 @@
 {
 
     "name": "Wordle Hint",
-    "description": "Gives hint for daily wordle problem! which includes vowel count, vowel position, single letter reveal, word definition",
+    "description": "Gives hints for daily wordle problem! which includes vowel count, vowel position, single letter reveal, word definition",
     "version": "0.0.1",
     "icons": {
       "16": "assets/icon16.png",
