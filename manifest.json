@@ -1,0 +1,14 @@
+{
+
+    "name": "Wordle Hint",
+    "description": "Gives hint for daily wordle problem!",
+    "version": "1.0",
+    "manifest_version": 3,
+    "content_scripts": [
+        {
+          "matches": ["https://www.nytimes.com/games/wordle/index.html"],
+          "js": ["main.js"]
+        }
+    ]
+    
+}
