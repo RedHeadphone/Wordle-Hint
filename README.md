@@ -17,8 +17,8 @@ Wordle Hint gives hints for daily [wordle](https://www.nytimes.com/games/wordle/
 
 ## Screenshots
 
-<img src="assets/demo1.png" width="890" />
-<img src="assets/demo2.png" width="890" />
+<img src="demo/demo1.png" width="890" />
+<img src="demo/demo2.png" width="890" />
 
 ## Usage
 
