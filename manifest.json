@@ -1,8 +1,13 @@
 {
 
     "name": "Wordle Hint",
-    "description": "Gives hint for daily wordle problem!",
-    "version": "1.0",
+    "description": "Gives hint for daily wordle problem! which includes vowel count,vowel position, letter reveal, definition",
+    "version": "0.0.1",
+    "icons": {
+      "16": "icon16.png",
+      "48": "icon48.png",
+      "128": "icon128.png"
+    },
     "manifest_version": 3,
     "content_scripts": [
         {
