@@ -246,7 +246,6 @@ function create_letter_section(){
 
 const left_section = document.createElement("div");
 left_section.style.cssText = `
-    max-height: 200px;
     width: 200px;
     position: absolute;
     left: -140px;

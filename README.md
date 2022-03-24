@@ -1,12 +1,12 @@
 <p align="center">
 <!-- <a href=""> -->
-<img src="assets/icon128.png"/>
+<img width="500px" src="demo/banner.png"/>
 <!-- </a> -->
 </p>
 
 ## What is Wordle Hint?
 
-Wordle Hint is a chrome extension which gives hints for daily [wordle](https://www.nytimes.com/games/wordle/index.html) problem without making it too easy.
+Wordle Hint is a browser extension which gives hints for daily [wordle](https://www.nytimes.com/games/wordle/index.html) problem without making it too easy.
 
 #### Hints includes 
 

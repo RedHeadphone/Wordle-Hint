@@ -2,18 +2,28 @@
 
     "name": "Wordle Hint",
     "description": "Gives hints for daily wordle problem! which includes vowel count, vowel position, single letter reveal, word definition",
-    "version": "0.0.1",
+    "version": "0.0.2",
+    "author": "Red Headphone",
+    "browser_specific_settings": {
+      "gecko": {
+        "id": "wordlehint@redheadphone.com",
+        "strict_min_version": "42.0"
+      }
+    },
     "icons": {
       "16": "assets/icon16.png",
       "48": "assets/icon48.png",
       "128": "assets/icon128.png"
     },
-    "manifest_version": 3,
+    "manifest_version": 2,
     "content_scripts": [
         {
           "matches": ["https://www.nytimes.com/games/wordle/index.html"],
           "js": ["main.js"]
         }
+    ],
+    "permissions":[
+      "https://api.dictionaryapi.dev/"
     ]
     
 }
