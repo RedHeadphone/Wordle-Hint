@@ -224,7 +224,7 @@ function create_letter_section(){
     for(var i=0;i<ans.length;i++){
         letter = ans[i]
         const letter_div = document.createElement("div");
-        letter_div.innerHTML = letter;
+        letter_div.innerHTML = letter.toUpperCase();
         letter_div.style.cssText = `
             border: 2px solid var(--color-tone-4);
             color: rgb(0,0,0,0);

@@ -20,6 +20,13 @@ Wordle Hint is a browser extension which gives hints for daily [wordle](https://
 <img src="demo/demo1.png" width="890" />
 <img src="demo/demo2.png" width="890" />
 
+## Install
+
+<!-- <a href=""><img src="https://raw.githubusercontent.com/alrra/browser-logos/master/src/chrome/chrome_128x128.png" width="48" /></a> -->
+<a href="https://addons.mozilla.org/en-US/firefox/addon/wordle-hint/"><img src="https://raw.githubusercontent.com/alrra/browser-logos/master/src/firefox/firefox_128x128.png" width="48" /></a>
+<a href="https://microsoftedge.microsoft.com/addons/detail/wordle-hint/jfdfhdkencbggnfgphmapahgmmnaecoj"><img src="https://raw.githubusercontent.com/alrra/browser-logos/master/src/edge/edge_128x128.png" width="48" /></a>
+<!-- <a href=""><img src="https://raw.githubusercontent.com/alrra/browser-logos/master/src/opera/opera_128x128.png" width="48" /></a> -->
+
 ## Usage
 
 - Left Section - This gives us all the definition of the wordle from [this](https://dictionaryapi.dev/) API. You can change definition using left and right arrow button.
