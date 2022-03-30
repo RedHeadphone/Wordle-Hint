@@ -2,14 +2,9 @@
 
     "name": "Wordle Hint",
     "description": "Gives hints for daily wordle problem! which includes vowel count, vowel position, single letter reveal, word definition",
-    "version": "0.0.2",
+    "version": "0.0.3",
     "author": "Red Headphone",
-    "browser_specific_settings": {
-      "gecko": {
-        "id": "wordlehint@redheadphone.com",
-        "strict_min_version": "42.0"
-      }
-    },
+    "browser_action": {},
     "icons": {
       "16": "assets/icon16.png",
       "48": "assets/icon48.png",
@@ -22,8 +17,12 @@
           "js": ["main.js"]
         }
     ],
+    "background": {
+      "scripts": ["background.js"]
+    },
     "permissions":[
-      "https://api.dictionaryapi.dev/"
+      "https://api.dictionaryapi.dev/",
+      "tabs"
     ]
     
 }
