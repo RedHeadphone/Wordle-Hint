@@ -14,7 +14,7 @@ const mutationCallback = (mutationsList) => {
     for (const mutation of mutationsList) {
         let statusofgame = JSON.parse(localStorage.getItem('nyt-wordle-state'))["gameStatus"]
         if (mutation.type === "attributes" && 
-            statusofgame == "WIN" && !revealedhints) {
+            statusofgame != "IN_PROGRESS" && !revealedhints) {
             revealedhints = true;
             for(let i=0;i<6;i++){
                 mainref.getElementById("revealvowelshints").click();
