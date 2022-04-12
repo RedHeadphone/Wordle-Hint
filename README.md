@@ -25,7 +25,7 @@ Wordle Hint is a browser extension which gives hints for daily [wordle](https://
 <!-- <a href=""><img src="https://raw.githubusercontent.com/alrra/browser-logos/master/src/chrome/chrome_128x128.png" width="48" /></a> -->
 <a href="https://addons.mozilla.org/en-US/firefox/addon/wordle-hint/"><img src="https://raw.githubusercontent.com/alrra/browser-logos/master/src/firefox/firefox_128x128.png" width="48" /></a>
 <a href="https://microsoftedge.microsoft.com/addons/detail/wordle-hint/jfdfhdkencbggnfgphmapahgmmnaecoj"><img src="https://raw.githubusercontent.com/alrra/browser-logos/master/src/edge/edge_128x128.png" width="48" /></a>
-<!-- <a href=""><img src="https://raw.githubusercontent.com/alrra/browser-logos/master/src/opera/opera_128x128.png" width="48" /></a> -->
+<a href="https://addons.opera.com/en/extensions/details/wordle-hint/"><img src="https://raw.githubusercontent.com/alrra/browser-logos/master/src/opera/opera_128x128.png" width="48" /></a>
 
 ## Usage
 
