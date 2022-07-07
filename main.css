@@ -1,0 +1,125 @@
+.Board-module_boardContainer__cKb-C{
+    position: relative;
+    overflow: visible !important;
+}
+
+.vowel-section{
+    max-height: 100%;
+    min-height: 70px;
+    max-width: 100%;
+    border: 2px solid var(--color-tone-4);
+}
+
+.vowel-list{
+    max-height: 100%;
+    max-width: 100%;
+    padding-right: 5px;
+}
+
+.vowel-list li{
+    color: var(--key-text-color);
+}
+
+#revealvowelshints{
+    border: 0px;
+    background-color: var(--key-bg);
+    color: var(--key-text-color);
+    padding: 10px 7px;
+    margin-bottom: 7px;
+    cursor: pointer;
+}
+
+.main-definition-section{
+    position: relative;
+    max-height: 100%;
+    max-width: 100%;
+    border: 2px solid var(--color-tone-4);
+}
+
+.definition-section{
+    position: relative;
+    max-height: 80%;
+    max-width: 100%;
+}
+
+.definition-para{
+    max-height: 100%;
+    max-width: 100%;
+    padding: 10px;
+    color: var(--key-text-color);
+    filter: blur(25px);
+}
+
+.definition-para div{
+    margin-top: 5px;
+}
+
+#revealdefinitionhints{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border: 0px;
+    background-color: var(--key-bg);
+    color: var(--key-text-color);
+    padding: 10px 7px;
+    cursor: pointer;
+}
+
+.navigation-section{
+    margin: 10px 8px;
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    grid-gap: 106px;
+    justify-content: space-between;
+}
+
+.nav-button{
+    border: 2px solid var(--color-tone-4);
+    color: var(--key-text-color);
+    padding: 2px 10px;
+    cursor: pointer;
+}
+
+.letter-section{
+    max-height: 30%;
+    max-width: 100%;
+    border: 2px solid var(--color-tone-4);
+    margin-top: 10px;
+    padding: 5px;
+}
+
+.letter-section .heading{
+    color: var(--key-text-color);
+    margin-bottom: 5px;
+    margin-top: 2px;
+}
+
+#reveallettershints{
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-gap: 5px;
+}
+
+.letter-div{
+    border: 2px solid var(--color-tone-4);
+    color: rgb(0,0,0,0);
+    padding: 7px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.left-section{
+    width: 200px;
+    position: absolute;
+    left: -140px;
+    overflow: hidden;
+}
+
+.right-section{
+    max-height: 400px;
+    width: 200px;
+    position: absolute;
+    right: -140px;
+    overflow: hidden;
+}

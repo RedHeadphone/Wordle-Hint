@@ -3,35 +3,10 @@ var data = JSON.parse(localStorage.getItem('nyt-wordle-state'))
 var ans = data["solution"]
 var revealedhints = false;
 
-var main = document.getElementsByTagName("game-app")[0].shadowRoot
+var main = document.getElementsByClassName("Board-module_boardContainer__cKb-C")[0]
 var mainref = main;
-var modal = main.getElementById("game").getElementsByTagName("game-modal")[0]
-main = main.getElementById("board-container")
-main.style.position = "relative";
-main.style.overflow = "visible";
 
-const mutationCallback = (mutationsList) => {
-    for (const mutation of mutationsList) {
-        let statusofgame = JSON.parse(localStorage.getItem('nyt-wordle-state'))["gameStatus"]
-        if (mutation.type === "attributes" && 
-            statusofgame != "IN_PROGRESS" && !revealedhints) {
-            revealedhints = true;
-            for(let i=0;i<6;i++){
-                mainref.getElementById("revealvowelshints").click();
-            }
-            mainref.getElementById("revealdefinitionhints").click();
-            let children = mainref.getElementById("reveallettershints").children;
-            for (let i = 0; i < children.length; i++) {
-                children[i].click();
-            }
-        }
-      
-    }
-  }
-
-  const observer = new MutationObserver(mutationCallback)
-
-  observer.observe(modal, { attributes: true })
+var modal = document.getElementsByClassName("Modal-module_modalOverlay__81ZCi")[0]
 
 var alldefinition = []
 var hints = []
@@ -47,39 +22,20 @@ hints.splice(0, 0, "The word has "+vowelcounter+" vowel(s)");
 
 function create_vowel_section(){
     const vowel_section = document.createElement("div");
-    vowel_section.style.cssText = `
-        max-height: 100%;
-        min-height: 70px;
-        max-width: 100%;
-        border: 2px solid var(--color-tone-4);
-    `
+    vowel_section.classList.add("vowel-section");
 
     const vowel = document.createElement("ul");
-    vowel.style.cssText = `
-        max-height: 100%;
-        max-width: 100%;
-        padding-right: 5px;
-    `
+    vowel.classList.add("vowel-list");
+
     const reveal = document.createElement("center");
     const revealbutton = document.createElement("button");
     revealbutton.innerText = "reveal hints";
     revealbutton.setAttribute("id","revealvowelshints");
-    revealbutton.style.cssText = `
-        border: 0px;
-        background-color: var(--key-bg);
-        color: var(--key-text-color);
-        padding: 10px 7px;
-        margin-bottom: 7px;
-        cursor: pointer;
-    `
 
     revealbutton.onclick = function(){
         let index = vowel.children.length
         if(index<hints.length){
             const hint = document.createElement("li");
-            hint.style.cssText = `
-                color: var(--key-text-color);
-            `
             hint.innerText = hints[index]
             vowel.appendChild(hint)
         }
@@ -93,24 +49,15 @@ function create_vowel_section(){
 
 function create_definition_section(){
     const main_definition_section = document.createElement("div");
-    main_definition_section.style.cssText = `
-        position: relative;
-        max-height: 100%;
-        max-width: 100%;
-        border: 2px solid var(--color-tone-4);
-    `
+    main_definition_section.classList.add("main-definition-section");
 
     const definition_section = document.createElement("div");
-    definition_section.style.cssText = `
-        position: relative;
-        max-height: 80%;
-        max-width: 100%;
-    `
+    definition_section.classList.add("definition-section");
     
     const para = document.createElement("p");
+    para.classList.add("definition-para");
     const pos = document.createElement("b");
     const actualdef = document.createElement("div");
-    actualdef.style.marginTop = "5px";
     pos.innerText = ":("
     actualdef.innerText = "Couldn't find definition which doesn't reveal the word"
     fetch("https://api.dictionaryapi.dev/api/v2/entries/en/"+ans).then( async (data)=>{
@@ -139,33 +86,14 @@ function create_definition_section(){
             actualdef.innerText = alldefinition[0]["definition"]
         }
         
-        
-        
     })
-    para.style.cssText = `
-        max-height: 100%;
-        max-width: 100%;
-        padding: 10px;
-        color: var(--key-text-color);
-        filter: blur(25px);
-    `
+
     para.appendChild(pos)
     para.appendChild(actualdef)
 
     const reveal = document.createElement("button");
     reveal.innerText = "reveal definitions";
     reveal.setAttribute("id","revealdefinitionhints");
-    reveal.style.cssText = `
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        border: 0px;
-        background-color: var(--key-bg);
-        color: var(--key-text-color);
-        padding: 10px 7px;
-        cursor: pointer;
-    `
 
     reveal.onclick = function(){
         para.style.filter = "none";
@@ -173,29 +101,16 @@ function create_definition_section(){
     }
 
     navigation_section = document.createElement("div");
-    navigation_section.style.cssText = `
-        margin: 10px 8px;
-        display: grid;
-        grid-template-columns: repeat(2,1fr);
-        grid-gap: 106px;
-        justify-content: space-between;
-    `
+    navigation_section.classList.add("navigation-section");
+
     left_button = document.createElement("span");
     left_button.innerText = "<"
-    left_button.style.cssText = `
-        border: 2px solid var(--color-tone-4);
-        color: var(--key-text-color);
-        padding: 2px 10px;
-        cursor: pointer;
-    `
+    left_button.classList.add("nav-button");
+
     right_button = document.createElement("span");
     right_button.innerText = ">"
-    right_button.style.cssText = `
-        border: 2px solid var(--color-tone-4);
-        color: var(--key-text-color);
-        padding: 2px 10px;
-        cursor: pointer;
-    `
+    right_button.classList.add("nav-button");
+
     left_button.onclick = function(){
         let index = parseInt(para.getAttribute("index"))
         if (index>0){
@@ -227,41 +142,21 @@ function create_definition_section(){
 
 function create_letter_section(){
     const letter_section = document.createElement("div");
-    letter_section.style.cssText = `
-        max-height: 30%;
-        max-width: 100%;
-        border: 2px solid var(--color-tone-4);
-        margin-top: 10px;
-        padding: 5px;
-    `
+    letter_section.classList.add("letter-section");
 
     const heading = document.createElement("center");
+    heading.classList.add("heading");
     heading.innerText = "reveal letters"
-    heading.style.cssText = `
-        color: var(--key-text-color);
-        margin-bottom: 5px;
-        margin-top: 2px;
-    `
 
     const letter_grid = document.createElement("div");
     letter_grid.setAttribute("id","reveallettershints");
-    letter_grid.style.cssText = `
-        display: grid;
-        grid-template-columns: repeat(5, 1fr);
-        grid-gap: 5px;
-    `
 
     for(var i=0;i<ans.length;i++){
         letter = ans[i]
         const letter_div = document.createElement("center");
+        letter_div.classList.add("letter-div");
         letter_div.innerText = letter.toUpperCase();
-        letter_div.style.cssText = `
-            border: 2px solid var(--color-tone-4);
-            color: rgb(0,0,0,0);
-            padding: 7px;
-            cursor: pointer;
-            font-weight: bold;
-        `
+
         letter_div.onclick = function(){
             letter_div.style.color = "var(--tile-text-color)";
             letter_div.style.backgroundColor = "var(--color-correct)";
@@ -274,24 +169,12 @@ function create_letter_section(){
     return letter_section
 }
 
-
 const left_section = document.createElement("div");
-left_section.style.cssText = `
-    width: 200px;
-    position: absolute;
-    left: -140px;
-    overflow: hidden;
-`
+left_section.classList.add("left-section");
 left_section.appendChild(create_definition_section())
 
 const right_section = document.createElement("div");
-right_section.style.cssText = `
-    max-height: 400px;
-    width: 200px;
-    position: absolute;
-    right: -140px;
-    overflow: hidden;
-`
+right_section.classList.add("right-section");
 right_section.appendChild(create_vowel_section());
 right_section.appendChild(create_letter_section())
 
