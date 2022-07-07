@@ -2,7 +2,7 @@
 
     "name": "Wordle Hint",
     "description": "Gives hints for daily wordle problem! which includes vowel count, vowel position, single letter reveal, word definition",
-    "version": "0.0.3",
+    "version": "0.1.0",
     "author": "Red Headphone",
     "browser_action": {},
     "icons": {
